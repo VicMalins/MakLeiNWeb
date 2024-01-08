@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examples of tasks</title>
+</head>
+<body>
+    <h1>List of possible task constructors</h1>
+    <hr>
+    <h3>Form of the Word</h3>
+    <input type="text" class="fw-sentence-input" placeholder="Type your question" onkeydown="
+      handleTaskKeydown(event);
+    ">
+    <button onclick="
+     addTask();
+    ">Add Question</button>
+    <button onclick="
+      taskList = [];
+      renderTaskList();
+    ">Remove All</button>
+    <ol>
+      <div class="js-task-list"></div>
+    </ol>
+<script>
+    let taskList = [];
+
+    renderTaskList();
+
+    function renderTaskList() {
+        let taskListHTML = '';
+
+        for (let i = 0; i < taskList.length; i++) {
+            const task = taskList[i];
+            const html = 
+            `<li class="js-question-body"> 
+            ${task}
+            </li>
+            <button onclick ="
+                taskList.splice(${i}, 1);
+                renderTaskList();
+            ">Delete</button>`;
+            taskListHTML += html;
+            
+        }
+
+        document.querySelector('.js-task-list').innerHTML = taskListHTML;
+        displayLastQuestion()
+    } 
+
+    function addTask () {
+    const inputElement = document.querySelector('.fw-sentence-input');
+    const name = inputElement.value;
+
+   
+    taskList.push(name);
+
+   inputElement.value = '';
+   
+   renderTaskList();
+}
+
+    function handleTaskKeydown(event) {
+    if (event.key === 'Enter') { 
+    addTask();
+    }
+}
+
+function displayLastQuestion() {
+let questionData = document.querySelector('.js-question-body')
+if (questionData != null) {
+JSON.stringify(questionData.innerText);
+console.log(questionData.innerText);
+
+
+let questionBuild = questionData.innerText;
+const detailedList = questionBuild.split(" ");
+
+
+replaceWordWithButton();
+
+function replaceWordWithButton () {
+  for (i = 0; i < detailedList.length; i++) {
+   let wordButt = document.createElement("button");
+   wordButt.classList.add('js-switched-word')
+   let wordDatt = document.createTextNode(detailedList[i]);
+   wordButt.appendChild(wordDatt);
+   document.body.appendChild(wordButt);
+   wordButt.setAttribute("onclick",
+   "console.log(Bitch)");
+
+  }
+}
+  }
+ }
+
+ 
+</script>
+</body>
+</html>

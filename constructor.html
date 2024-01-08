@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Constructor</title>
+</head>
+<body>
+    <h1>MakLeiNWeb</h1>
+    <fieldset>
+        <legend>Test Constructor</legend>
+        <label for="taskType">Task Type:</label>
+            <input type="taskType" name="taskType" id="taskType" list="task-type-list" class="js-question-type">
+            <datalist id="task-type-list">
+                <option value="Word Input">
+                <option value="Open Ending">
+                <option value="Editing">
+                <option value="Answer the Queston">
+            </datalist> 
+            <button onclick="
+              const questionType = document.querySelector('.js-question-type').value;
+              console.log(questionType)
+            ">Setup</button>
+            <br>
+            <br>
+        <input type="text" placeholder="Your question">
+        
+    </fieldset>
+</body>
+</html>
