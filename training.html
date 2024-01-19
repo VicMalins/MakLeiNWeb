@@ -3,25 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Worksheet Editor</title>
 </head>
 <body>
-    <h1> Hello There </h1>
+    <h1>List of possible constructions</h1>
+    <div class="question-editor">
+      <div class="editor-first">
+        <input type="text" class="question-input" placeholder="Type your question" onkeydown="
+        handleTaskKeydown(event);
+       ">
+        <button onclick="
+        startEditing();
+        ">Edit</button>
+      </div>
+      <br>
+      <div class="editor-second">
+        <p class="input-second-stage"></p>
+      </div>
+      <div class="editor-footer">
+        <button onclick="
+            printElements()
+            ">Generate</button>
+      </div>
+    </div>
+    <div class="question-list-container">
+       <ol class="question-list">
+         
+       </ol>
+    </div>
 </body>
 <script>
-    const myArray = [];
-    console.log(myArray);
+   let secondStage = document.querySelector('.input-second-stage').innerText
+   let secondStageInfo = document.querySelector('.input-second-stage')
+   const editorSecond = document.querySelector('.editor-second')
+   const workSheet = document.querySelector('.question-list-container')
+   const workSheetList = document.querySelector('.question-list')
+   
+   let questionList = [];
 
-    myArray.push('niggers');
-    console.log(myArray);
 
-    myArray.push('fucking');
-    console.log(myArray);
+   function startEditing() {
+   let questionSet= document.querySelector('.question-input')
+   let content = questionSet.value
+   if (content != null) {
+   document.querySelector('.input-second-stage')
+    .innerHTML = `${content}`;
+    secondStage = content
+    breakOnButtons()
+     }
+   }
 
-    myArray[0] = myArray[1];
-    myArray[1] = myArray[0];
-    console.log(myArray);
-    
+   function handleTaskKeydown(event) {
+    if (event.key === 'Enter') { 
+    startEditing();
+    }
+   }
+
+   function onWordClick (event) {
+   let input = document.createElement("input");
+   input.classList.add('js-word-gap','js-switched-word');
+   let edit = document.createElement("button");
+   edit.classList.add('js-word-gaped');
+   edit.innerHTML = 'delete';
+   edit.onclick = removeInputPlace;
+   event.target.replaceWith(input, edit);
+   editedWord = event.target.innerText;
+   let hint = document.createElement("p")
+   hint.classList.add('js-task-hint')
+   hint.innerHTML = `<p class="js-hint-place">
+   (<input placeholder="${editedWord}">)
+   <button onclick="
+    removeHintPlace();
+   ">Delete</button>
+   </p>
+   `
+   editorSecond.appendChild(hint);
+ }
+
+   function breakOnButtons() {
+   if (secondStage != null) {
+   let secondStageList = secondStage.split(" ");
+    for (i = 0; i < secondStageList.length; i++) {
+    let wordButt = document.createElement("button");
+    wordButt.classList.add('js-switched-word')
+    let wordDatt = document.createTextNode(secondStageList[i]);
+    wordButt.appendChild(wordDatt);
+    editorSecond.appendChild(wordButt);
+    secondStageInfo.remove();
+    wordButt.onclick = onWordClick;
+
+     }
+    }
+   }
+
+
+  //  let questHTML = document.querySelector('.editor-second')
+  //  let questBase = questHTML.innerHTML;
+  //  console.log(questBase);
+
+
+  //  function wrapIntoTask() {
+  //  let assemble = document.querySelectorAll('.js-switched-word');
+  //  let assembleArray = Array.prototype.slice.call(assemble);
+  //  let assembleArrayString = assembleArray.toString();
+  //  console.log(assembleArrayString);
+  //  }
+   
+
+  function getWordElementsByClass() {
+  const elements = document.querySelectorAll('.js-switched-word');
+
+  return Array.from(elements);
+}
+
+function printElements() {
+  const elements = getWordElementsByClass();
+
+  const words = elements.map((element) => {
+    if(element.classList.contains('js-word-gap')) {
+      const value = element.getAttribute('value');
+      return ''.padStart(value ? value.length : 6, '________');
+    }
+
+    return element.textContent;
+    let questionResult = words.innerHTML
+    console.log(questionResult);
+  }); 
+  
+  workSheet.innerText = words.join(' ');
+  workSheet.appendChild();
+}
+
+function removeHintPlace() {
+  const hintPlace = document.querySelector('.js-hint-place');
+  const hintTool = document.querySelector('.js-hint-gaped');
+  hintPlace.remove();
+  hintTool.remove();
+}
+
+function removeInputPlace() {
+  const savePlace = document.querySelector('.js-word-gap');
+  savePlace.remove();
+}
 
 </script>
 </html>
