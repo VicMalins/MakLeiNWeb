@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheet Editor</title>
+    <link rel="stylesheet" href="worksheet-constructor.css">
+    <link rel="icon" href="/Images/MakLeiN Logo.png">
+</head>
+<body>
+    <h1>List of possible constructions</h1>
+    <div class="question-editor">
+      <div class="editor-first">
+        <input type="text" class="question-input" placeholder="Type your question" onkeydown="
+        handleTaskKeydown(event);
+       ">
+        <button class="first-edit-button" onclick="
+        startEditing();
+        ">Edit</button>
+      </div>
+      <br>
+      <div class="editor-second">
+        <p class="input-second-stage"></p>
+      </div>
+      <div class="editor-footer">
+        <button class="generate-the-question" onclick="
+            printElements();
+            addHints();
+            ">Generate</button>
+      </div>
+    </div>
+    <div class="question-list-container">
+       <ol class="question-list">
+         
+       </ol>
+    </div>
+</body>
+<script src="worksheet-constructor.js">
+</script>
+</html>
