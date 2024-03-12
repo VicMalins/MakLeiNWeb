@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksheet Editor</title>
+    <link rel="stylesheet" href="worksheet-constructor.css">
+    <link rel="icon" href="/Images/MakLeiN Logo.png">
+</head>
+<body>
+    <h1>Worksheet editor</h1>
+    <img class="main-logo-page" type="image" src="Images/maklein logo transparent png.png">
+    <div  class="question-editor">
+      <div class="editor-first">
+        <input type="text" class="question-input" placeholder="Type your question" onkeydown="
+        handleTaskKeydown(event);
+       ">
+        <button class="first-edit-button" onclick="
+        startEditing();
+        ">Edit</button>
+        <button class="print-button" onclick="
+        window.print();
+        ">Print</button>
+      </div>
+      <br>
+      <div id="editor" class="editor-second"></div>
+      <div class="editor-footer">
+        <button class="generate-the-question" onclick="
+            printElements();
+            ">Add</button>
+      </div>
+    </div>
+    <div class="question-list-container">
+      <input type="text" class="test-title" placeholder="Name Your Worksheet">
+       <ol class="question-list">
+       </ol>
+    </div>
+</body>
+<script src="worksheet-constructor.js">
+</script>
+</html>
