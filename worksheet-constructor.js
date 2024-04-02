@@ -223,10 +223,11 @@ function init() {
 init()
 
 // storageSync(){
-  
 // }
 
 // 1) review the function that works with LS 
 // 2) modify 2 actons (remove and add) with reading and sync with LS 
 // 3) add refresh and sync of WorkSheet 
-//  
+//    
+
+let me = []; 
