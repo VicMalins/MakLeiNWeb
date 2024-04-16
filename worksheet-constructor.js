@@ -48,8 +48,6 @@ function onWordClick(event) {
   edit.innerHTML = "X";
   function restoreButton() {
     console.log(`.js-block-place-${index}`);
-    //1) SAVE THE BUTTON SOMEWHERE (i.e. with a unique class)
-    //2) RESTORE IT WITH THIS FUNCTION HERE
   }
 
   edit.onclick = function () {
@@ -184,11 +182,6 @@ function removeInputPlace(className, onRemove) {
 
 function addTestTitle() {}
 
-//  let testJSON = JSON.stringify(workSheetList);
-//  localStorage.setItem(workSheetList);
-// 1) create an array of objects to store a list
-// 2) render the LS every time you push remove or add
-
 window.addEventListener("beforeprint", function () {
   let assignedTitle = document.querySelector(".test-title").value;
   if (assignedTitle) {
@@ -214,9 +207,3 @@ function init() {
 
 init();
 
-// storageSync(){
-// }
-
-// 1) review the function that works with LS
-// 2) modify 2 actons (remove and add) with reading and sync with LS
-// 3) add refresh and sync of WorkSheet
