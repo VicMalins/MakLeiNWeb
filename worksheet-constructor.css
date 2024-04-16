@@ -1,18 +1,22 @@
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: rgb(217, 228, 243);
-    color: rgb(84, 85, 89);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: rgb(217, 228, 243);
+  color: rgb(84, 85, 89);
 }
 
 h1 {
-  display: inline-block
+  display: inline-block;
 }
 
 button {
-    font-family: inherit;
+  font-family: inherit;
 }
 
-@page { size: auto;  margin: 5mm; }
+@page {
+  size: auto;
+  margin: 5mm;
+}
 
 .question-input {
   font-family: inherit;
@@ -38,7 +42,7 @@ button {
 }
 
 .test-title {
-    font-family: inherit;
+  font-family: inherit;
   width: 350px;
   border: 0;
   border-bottom: 2px solid gray;
@@ -56,156 +60,152 @@ button {
 }
 
 .first-edit-button {
-    height: 40px;
-    width: 80px;
-    font-size: 20px;
-    color: white;
-    background-color: blue;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.15s, color 0.5s;
+  height: 40px;
+  width: 80px;
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.5s;
 }
 
 .first-edit-button:hover {
-    background-color: rgb(32, 181, 255);
-    color: black;
-    
+  background-color: rgb(32, 181, 255);
+  color: black;
 }
 
 .js-switched-word {
-    background-color: inherit;
-    border: none;
-    font-size: 20px;
-    transition: background-color 0.15s, color 0.5s;
-
+  background-color: inherit;
+  border: none;
+  font-size: 20px;
+  transition: background-color 0.15s, color 0.5s;
 }
 
 .js-switched-word:hover {
-    background-color: rgb(32, 181, 255);
-    color: white;
+  background-color: rgb(32, 181, 255);
+  color: white;
 }
 
 .js-word-gap {
-    width: 20px;
-    background-color: white;
-
+  width: 20px;
+  background-color: white;
 }
 
 .js-word-gaped {
-    size: 10px;
-    color: inherit;
-    background-color: gray;
-    border: none;
-    cursor: pointer;
+  size: 10px;
+  color: inherit;
+  background-color: gray;
+  border: none;
+  cursor: pointer;
 }
 
 .generate-the-question {
-    height: 40px;
-    width: 100px;
-    font-size: 20px;
-    color: white;
-    background-color: blue;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.15s, color 0.5s;
-    margin-top: 20px;
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+  color: white;
+  background-color: blue;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.5s;
+  margin-top: 20px;
 }
 
 .generate-the-question:hover {
-    background-color: rgb(32, 181, 255);
-    color: black;
+  background-color: rgb(32, 181, 255);
+  color: black;
 }
 
-
 .js-hint-generator {
-    font-family: inherit;
-    width: 200px;
-    border: 0;
-    border-bottom: 2px solid gray;
-    outline: 0;
-    font-size: 1.3rem;
-    color: rgb(0, 0, 0);
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-    font-weight: bold;
+  font-family: inherit;
+  width: 200px;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  font-weight: bold;
 
-    &:placeholder-shown ~ .form__label {
-      font-size: 1.3rem;
-      cursor: text;
-      top: 20px;
-      font-weight: bold;
-    }
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+    font-weight: bold;
+  }
 }
 
 .js-hint-place {
-    font-family: inherit;
-    font-size: 1.3rem;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
+  font-family: inherit;
+  font-size: 1.3rem;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 
 li {
-    font: inherit;
-    font-size: 1.3rem;
-    font-style: normal;
-    color: black; 
-    margin-top: 10px;
+  font: inherit;
+  font-size: 1.3rem;
+  font-style: normal;
+  color: black;
+  margin-top: 10px;
 }
 
 .question-hint {
-    font-style: italic;
+  font-style: italic;
 }
 
 @media print {
-    h1, .question-editor {
-        display: none;
-    }
-    .js-removal-button {
-        display: none;
-    }
+  h1,
+  .question-editor {
+    display: none;
+  }
+  .js-removal-button {
+    display: none;
+  }
 
-    .question-list {
-        font-size: 2.0rem;
-        margin-left: 25px;
-    }
+  .question-list {
+    font-size: 2rem;
+    margin-left: 25px;
+  }
 
-    .print-button {
-        display: none;
-    }
+  .print-button {
+    display: none;
+  }
 
-    .test-title {
-        margin-bottom: 70px;
-    }
-
+  .test-title {
+    margin-bottom: 70px;
+  }
 }
 
 .print-button {
-    height: 40px;
-    width: 100px;
-    font-size: 20px;
-    color: black;
-    background-color: rgb(32, 181, 255);
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.15s, color 0.5s;
-    margin-top: 20px;
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+  color: black;
+  background-color: rgb(32, 181, 255);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.5s;
+  margin-top: 20px;
 }
 
 .print-button:hover {
-    background-color: blue;
-    color: white;
+  background-color: blue;
+  color: white;
 }
 
- .main-logo-page {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        height: 150px;
-        width: 150px;
+.main-logo-page {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 150px;
+  width: 150px;
 }
 
 /* this is a design file for us */
