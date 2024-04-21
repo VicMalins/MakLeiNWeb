@@ -135,7 +135,7 @@ function createListItem(question, hint) {
   listItem.appendChild(removeButton);
   removeButton.onclick = removeDetail;
   clearAllForm();
-  removeButton.value = "x";
+  removeButton.innerHTML = 'x';
 
   let questionString = listItem.innerText;
   console.log(questionString);
