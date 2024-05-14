@@ -207,10 +207,16 @@ function init() {
 
 init();
 
-$(document).ready(function(){
-  $('#name_one').on('keyup',function(){
-    var c_val = $(this).val();
-    $('#name_two').text(c_val);
+window.addEventListener('load', function(){
+  const techInput = document.getElementById('tech-name');
+  if (techInput) {
+    techInput.addEventListener("keyup", function(event){
+      const previewInput = document.getElementById('preview-name');
+      previewInput.innerText = event.target.value 
+    })
+  }
 });
-});
+
+
+
 
