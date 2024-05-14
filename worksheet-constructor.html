@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worksheet Editor</title>
+    <title>Worksheet Constructor</title>
     <link rel="stylesheet" href="worksheet-constructor.css">
     <link rel="icon" href="/Images/MakLeiN Logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+<div class="editor-body">
     <h1>Worksheet editor</h1>
     <img class="main-logo-page" type="image" src="Images/maklein logo transparent png.png">
     <div  class="question-editor">
-      <div class="editor-first">
-        <input type="text" class="question-input" placeholder="Type your question" onkeydown="
-        handleTaskKeydown(event);
-       "/>
-        <button class="first-edit-button" onclick="
-        startEditing();
-        ">Edit</button>
-        <button class="print-button" onclick="
+      <p>Name of a Worksheet:<input type="text" class="worksheet-name" id="name_one"/><button class="print-button" onclick="
         window.print();
-        ">Print</button>
+        ">Print</button></p>
+      <div class="editor-first">
+        <p>Type your Question here:<input type="text" class="question-input" placeholder="Type your question" onkeydown="
+        handleTaskKeydown(event);
+       "/><button class="first-edit-button" onclick="
+        startEditing();
+        ">Edit</button></p>
       </div>
       <br>
       <div id="editor" class="editor-second"></div>
@@ -30,8 +31,10 @@
             ">Add</button>
       </div>
     </div>
+    </div>
+    <hr>
     <div class="question-list-container">
-      <input type="text" class="test-title" placeholder="Name Your Worksheet"/>
+      <p class="test-title" id="name_two"></p>
        <ol class="question-list"></ol>
     </div>
 </body>

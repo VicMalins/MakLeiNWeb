@@ -55,15 +55,15 @@ function onWordClick(event) {
   };
   event.target.replaceWith(blockPlace);
 
+
   editedWord = event.target.innerText;
   let hint = document.createElement("p");
   hint.classList.add("js-task-hint");
-  hint.innerHTML = `<p class="js-hint-place">
+  hint.innerHTML = `
 (<input class="js-hint-generator" placeholder="${editedWord}"/>)
 <button onclick="
  removeHintPlace();
 ">X</button>
-</p>
 `;
   editorSecond.appendChild(hint);
 }
@@ -168,7 +168,7 @@ function clearAllForm() {
 }
 
 function removeHintPlace() {
-  const hintPlace = document.querySelector(".js-hint-place");
+  const hintPlace = document.querySelector(".js-task-hint");
   const hintTool = document.querySelector(".js-hint-gaped");
   hintPlace.remove();
   hintTool.remove();
@@ -183,7 +183,7 @@ function removeInputPlace(className, onRemove) {
 function addTestTitle() {}
 
 window.addEventListener("beforeprint", function () {
-  let assignedTitle = document.querySelector(".test-title").value;
+  let assignedTitle = document.querySelector(".worksheet-name").value;
   if (assignedTitle) {
     document.title = assignedTitle;
   }
@@ -206,4 +206,11 @@ function init() {
 }
 
 init();
+
+$(document).ready(function(){
+  $('#name_one').on('keyup',function(){
+    var c_val = $(this).val();
+    $('#name_two').text(c_val);
+});
+});
 
