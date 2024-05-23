@@ -52,7 +52,6 @@ p, ol {
   border-bottom: 2px solid gray;
   outline: 0;
   font-size: 1.3rem;
-  color: rgb(0, 0, 0);
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -155,7 +154,6 @@ li {
   font: inherit;
   font-size: 1.3rem;
   font-style: normal;
-  color: black;
   margin-top: 10px;
 }
 
