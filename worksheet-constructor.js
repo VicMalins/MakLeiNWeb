@@ -95,7 +95,7 @@ function printElements() {
   const words = elements.map((element) => {
     if (element.classList.contains("js-word-gap")) {
       const value = element.getAttribute("value");
-      return "".padStart(value ? value.length : 9, "___________");
+      return "".padStart(value ? value.length : 15, "_______________");
     }
 
     return element.textContent;
